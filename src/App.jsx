@@ -49,14 +49,26 @@ function App() {
     })
   } 
 
+  const mudarTexto = (e) => {
+    setPesquisa(e.target.value);
+  }
+
+  const verificaInput = (e) => {
+    if(e.key === 'Enter'){
+      pegar();
+    }else{
+      return
+    }
+  }
+
   return (
     <div className="App">
       <div>
         <h1>Ferramenta de pesquisa</h1>
         <h3>Criado por: <a className='LinkGit' href='https://github.com/ErickHenrique2000RDM/RPA_Backend' target="_blank"><strong>Erick Henrique Silva</strong></a></h3>
       </div>
-      <div  className='caixaPesquisa'>
-        <input className='input' placeholder="O que deseja buscar?" type="text" value={pesquisa} onChange={e => setPesquisa(e.target.value)}></input>
+      <div onKeyDown={e => verificaInput(e)} className='caixaPesquisa'>
+        <input className='input' placeholder="O que deseja buscar?" type="text" value={pesquisa} onChange={e => mudarTexto(e)}></input>
         <button id='submit' className='pesquisa' onClick={() => pegar()}>Pesquisar</button>
       </div>
 
