@@ -4,7 +4,8 @@ import axios from 'axios'
 import MenuLoja from './lojas/MenuLoja'
 var _ = require('lodash');
 
-const baseURL = 'http://localhost:8000/'
+// const baseURL = 'http://localhost:8000/'
+const baseURL = ' https://teste-puppeteer.herokuapp.com/'
 
 function App() {
 
